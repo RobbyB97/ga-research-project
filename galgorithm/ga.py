@@ -25,9 +25,10 @@ class GA:
             self.make_chromosome()
         return
 
+
+    # Create chromosome for first gen GA
     def make_chromosome(self):
 
-        # Create chromosome for first gen GA
         chromosome = []
         for i in range(self.size):
             gene = [i, randint(0, self.size-1)]
