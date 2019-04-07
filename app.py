@@ -7,6 +7,7 @@
 import logging
 import os
 from chessenv.board import Board
+from galgorithm.ga import GA
 
 # Set logger
 log = logging.getLogger('GA_Project')
@@ -23,6 +24,4 @@ log.addHandler(handler)
 log.info('Running file ~/main/app.py:')
 
 if __name__ == '__main__':
-    x = Board()
-    x.print_board()
-    log.warning('ay')
+    x = GA()
