@@ -32,7 +32,10 @@ class GA:
         for gene in self.chromosome:
             self.env.place_queen(row=gene[0], column=gene[1])
 
-        self.env.print_board()
+        log.info('%s has %s conflicts' % (str(self.chromosome), self.env.conflicts))
+
+        if not self.env.conflicts:
+            self.env.print_board()
 
 
     def make_chromosome(self):
