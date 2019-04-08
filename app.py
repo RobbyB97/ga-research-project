@@ -45,7 +45,8 @@ def fitness_one(batch, divisor=5):
             if object.env.conflicts < fitness:
                 fitness = object.env.conflicts
                 possible.append(object)
-        possible.sort(key=lambda x: x.env.conflicts, reverse=True)
+        possible.sort(key=lambda x: x.env.conflicts, reverse=False)
+        batch.pop(batch.index(possible[0]))
         fittest.append(possible[0])
     return fittest
 
@@ -57,4 +58,5 @@ if __name__ == '__main__':
     info['firstgen']['algorithms'] = execGA()
     info['firstgen']['fittest'] = fitness_one(batch=info['firstgen']['algorithms'])
 
-    print(len(info['firstgen']['fittest']))
+    for element in info['firstgen']['fittest']:
+        log.info('Fitness: %s' % element.env.conflicts)
