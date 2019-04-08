@@ -34,14 +34,16 @@ class Board:
 
     def print_board(self):
 
-        message = 'Current board status: \n'
-        for row in self.board:
-            message = message + str(row) + '\n'
-        log.info(message)
         if self.conflicts:
-            log.info('This board has %s conflicts' % self.conflicts)
+            conflicts = 'This board has %s conflicts\n' % self.conflicts
         else:
-            log.info('This board has no conflicts')
+            conflicts = 'This board has no conflicts\n'
+
+        board = ''
+        for row in self.board:
+            board = board + str(row) + '\n'
+            
+        log.info('Current board status: \n %s%s\n\n\n' % (conflicts, board))
         return
 
 
@@ -107,6 +109,4 @@ class Board:
 
         # Place queen
         self.board[row][column] = 2
-
-        self.print_board()
         return
