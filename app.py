@@ -23,6 +23,38 @@ log.addHandler(consoleHandler)
 log.addHandler(handler)
 log.info('Running file ~/main/app.py:')
 
+
+
+def execGA(num=100):
+
+    batch = []
+    for i in range(num):
+        x = GA()
+        x.try_chromosome()
+        batch.append(x)
+    return batch
+
+def fitness_one(batch, divisor=5):
+
+    fittest = []
+    crop = len(batch)/5
+    for i in range(int(crop)):
+        fitness = 100
+        possible = []
+        for object in batch:
+            if object.env.conflicts < fitness:
+                fitness = object.env.conflicts
+                possible.append(object)
+        possible.sort(key=lambda x: x.env.conflicts, reverse=True)
+        fittest.append(possible[0])
+    return fittest
+
 if __name__ == '__main__':
-    x = GA()
-    x.try_chromosome()
+
+    # Storage
+    info = {}
+    info['firstgen'] = {}
+    info['firstgen']['algorithms'] = execGA()
+    info['firstgen']['fittest'] = fitness_one(batch=info['firstgen']['algorithms'])
+
+    print(len(info['firstgen']['fittest']))
