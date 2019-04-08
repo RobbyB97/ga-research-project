@@ -25,3 +25,4 @@ log.info('Running file ~/main/app.py:')
 
 if __name__ == '__main__':
     x = GA()
+    x.try_chromosome()
