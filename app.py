@@ -6,9 +6,11 @@
 
 import logging
 import os
+import json
+import time
+
 from chessenv.board import Board
 from galgorithm.ga import GA
-import time
 
 # Set logger
 log = logging.getLogger('GA_Project')
@@ -26,8 +28,38 @@ log.info('Running file ~/main/app.py:')
 
 
 
-def current_time():
-    return int(round(time.time() * 1000))
+class GATest:
+
+
+    def __init__(self):
+
+        self.results = []       # List of completed test stats
+        return
+
+
+    def current_time(self):
+        return int(round(time.time() * 1000))
+
+
+    def run_ga_test(self, size=8, chromosomes=None):
+        return
+
+
+    def splice(self, chromosomes):
+        return
+
+
+    def run_ra_test(self, size=8):
+        return
+
+
+    def fitness_function(self, batch, divisor=5):
+        return
+
+
+    def store_results(self, results):
+        return
+
 
 
 def ga_test():
