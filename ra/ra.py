@@ -1,5 +1,7 @@
 """
+    Author: Robby Bergers
 
+    This class runs a random agent to solve the toy problem
 """
 
 import logging
