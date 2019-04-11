@@ -57,3 +57,5 @@ def store_results(results):
 
 
 if __name__ == '__main__':
+    data = run_trials(100)
+    store_results(data)
