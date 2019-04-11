@@ -34,12 +34,11 @@ class GATest:
 
     def __init__(self, name='results'):
 
-        self.attempts = 0   # Keep track of number of solve attempts
         self.name = name    # Name file to store results in
         self.ga_complete = False
         self.ra_complete = False
         self.ga_attempts = 0
-        self.ra_attemps = 0
+        self.ra_attempts = 0
         return
 
 
@@ -50,10 +49,15 @@ class GATest:
     def run_test(self):
 
         # Run tests
+        self.ga_start_time = self.current_time()
         while not self.ga_complete:
             self.run_ga_test()
+        self.ga_total_time = self.ga_end_time - self.ga_start_time
 
-        self.run_ra_test()
+        self.ra_start_time = self.current_time()
+        while not self.ra_complete:
+            self.run_ra_test()
+        self.ra_total_time = self.ra_end_time - self.ra_start_time
 
         # Return results
         self.store_results()
@@ -75,6 +79,8 @@ class GATest:
 
                 # Check if goal state found
                 if x.complete:
+                    self.ga_end_time = self.current_time()
+                    log.info('GA Solution found after %s attempts (first-gen)' % str(self.ga_attempts))
                     self.ga_complete = True
                     return
                 else:
@@ -111,7 +117,6 @@ class GATest:
             for i in range(0, len(chromosome), 2):
                 new_chromosome.append(chromosome[i:i+2])
             unspliced_chromosomes.append(new_chromosome)
-            log.info('Unspliced chromosomes: %s' % len(unspliced_chromosomes))
 
         # Splice chromosomes
         for i in range(int(len(unspliced_chromosomes)/2)):
@@ -156,8 +161,6 @@ class GATest:
 
             spliced_chromosomes.append(spliced_one)
             spliced_chromosomes.append(spliced_two)
-
-        log.info('Newly spliced chromosomes: \n%s\n' % spliced_chromosomes)
         return self.run_ga_test(chromosomes=spliced_chromosomes)
 
 
@@ -199,10 +202,11 @@ class GATest:
 
 
     def store_results(self):
-        with open('%s.txt' % self.name, 'w+') as f:
-            f.write('%s RESULTS:' % self.name)
-            f.write('--------------------------------')
-            f.write('GA Attempts before goal state: %s' % self.ga_attempts)
+
+        results = {}
+
+        results['GA_Attempts'] = self.ga_attempts
+        results['RA_Attempts'] = self.ra_attempts
         return
 
 
