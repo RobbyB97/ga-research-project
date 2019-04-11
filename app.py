@@ -12,6 +12,7 @@ from random import randint
 
 from chessenv.board import Board
 from galgorithm.ga import GA
+from ra.ra import RA
 
 # Set logger
 log = logging.getLogger('GA_Project')
@@ -70,6 +71,7 @@ class GATest:
 
         # If this is first-gen
         if not chromosomes:
+            self.ga_first_gen = True
 
             # Create first batch of chromosomes
             for i in range(100):
@@ -80,13 +82,14 @@ class GATest:
                 # Check if goal state found
                 if x.complete:
                     self.ga_end_time = self.current_time()
-                    log.info('GA Solution found after %s attempts (first-gen)' % str(self.ga_attempts))
+                    log.info('GA Solution found after %s attempts' % str(self.ga_attempts))
                     self.ga_complete = True
                     return
                 else:
                     chromosome_list.append(x)
 
         else:
+            self.ga_first_gen = False
 
             # Run each chromosome
             for chromosome in chromosomes:
@@ -96,6 +99,7 @@ class GATest:
 
                 # Check if goal state found
                 if x.complete:
+                    self.ga_end_time = x.end_time
                     log.info('GA Solution found after %s attempts' % str(self.ga_attempts))
                     self.ga_complete = True
                     return
@@ -165,6 +169,17 @@ class GATest:
 
 
     def run_ra_test(self, size=8):
+
+        # Run instance of random agent
+        self.ra_attempts += 1
+        x = RA()
+        x.run()
+
+        # Check if goal state found
+        if x.complete:
+            self.ra_end_time = self.current_time()
+            log.info('RA Solution found after %s attempts' % str(self.ra_attempts))
+            self.ra_complete = True
         return
 
 
@@ -207,6 +222,9 @@ class GATest:
 
         results['GA_Attempts'] = self.ga_attempts
         results['RA_Attempts'] = self.ra_attempts
+        results['GA_Total_Time'] = self.ga_total_time
+        results['RA_Total_Time'] = self.ra_total_time
+        print(results)
         return
 
 
