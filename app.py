@@ -8,6 +8,7 @@ import logging
 import os
 import json
 import time
+from random import randint
 
 from chessenv.board import Board
 from galgorithm.ga import GA
@@ -51,8 +52,6 @@ class GATest:
         # Run tests
         while not self.ga_complete:
             self.run_ga_test()
-            if not self.ga_complete:
-                log.info('GA thread did not yield goal state. Restarting...')
 
         self.run_ra_test()
 
@@ -103,19 +102,63 @@ class GATest:
 
     def splice(self, chromosomes):
 
-        chromosome_list = []        # Spliced chromosomes to be returned
+        unspliced_chromosomes = []
+        spliced_chromosomes = []
 
         # Convert list of chromosomes to embedded lists
         for chromosome in chromosomes:
             new_chromosome = []
             for i in range(0, len(chromosome), 2):
                 new_chromosome.append(chromosome[i:i+2])
+            unspliced_chromosomes.append(new_chromosome)
+            log.info('Unspliced chromosomes: %s' % len(unspliced_chromosomes))
 
-            chromosome_list.append(new_chromosome)
+        # Splice chromosomes
+        for i in range(int(len(unspliced_chromosomes)/2)):
 
-        log.info('%s genes to be spliced' % len(chromosome_list))
+            # Pick two chromosomes at random
+            pick_one = randint(0, len(unspliced_chromosomes)-1)
+            chromosome_one = unspliced_chromosomes[pick_one]
+            unspliced_chromosomes.pop(pick_one)
+            pick_two = randint(0, len(unspliced_chromosomes)-1)
+            chromosome_two = unspliced_chromosomes[pick_two]
+            unspliced_chromosomes.pop(pick_two)
 
-        return self.run_ga_test(chromosomes=chromosome_list)
+            # Create fragments
+            upper_left = []
+            upper_right = []
+            lower_left = []
+            lower_right = []
+            cutting_point = randint(1, len(chromosome_one)-1)
+            for gene in chromosome_one:
+                if chromosome_one.index(gene) < cutting_point:
+                    upper_left.append(gene)
+                else:
+                    lower_right.append(gene)
+
+            for gene in chromosome_two:
+                if chromosome_two.index(gene) < cutting_point:
+                    lower_left.append(gene)
+                else:
+                    upper_right.append(gene)
+
+            # Create spliced chromosomes and append to spliced list
+            spliced_one = []
+            spliced_two = []
+            for gene in upper_left:
+                spliced_one.append(gene)
+            for gene in upper_right:
+                spliced_one.append(gene)
+            for gene in lower_left:
+                spliced_two.append(gene)
+            for gene in lower_right:
+                spliced_two.append(gene)
+
+            spliced_chromosomes.append(spliced_one)
+            spliced_chromosomes.append(spliced_two)
+
+        log.info('Newly spliced chromosomes: \n%s\n' % spliced_chromosomes)
+        return self.run_ga_test(chromosomes=spliced_chromosomes)
 
 
     def run_ra_test(self, size=8):
