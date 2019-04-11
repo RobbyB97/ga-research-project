@@ -6,3 +6,6 @@ venv/*
 
 # Ignore jupyter notebook files
 *.ipynb
+
+# Ignore trial results
+results/*
