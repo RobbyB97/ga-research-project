@@ -1,6 +1,7 @@
 """
+    Author: Robby Bergers
 
-
+    This class is the environment for the 8 Queens toy problem
 """
 
 import logging
@@ -42,7 +43,7 @@ class Board:
         board = ''
         for row in self.board:
             board = board + str(row) + '\n'
-            
+
         log.info('Current board status: \n %s%s\n\n\n' % (conflicts, board))
         return
 
