@@ -41,13 +41,6 @@ class GATest:
         self.ra_complete = False
         self.ga_attempts = 0
         self.ra_attempts = 0
-
-        # Set directory to file
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
-
-        # Ensure results directory exists
-        if not os.path.exists('results'):
-            os.makedirs('results')
         return
 
 
@@ -227,24 +220,31 @@ class GATest:
     def store_results(self):
 
         # Create dictionary with test data
-        results = {}
-        results['Name'] = self.name
-        results['GA_Attempts'] = self.ga_attempts
-        results['RA_Attempts'] = self.ra_attempts
-        results['GA_Total_Time'] = self.ga_total_time
-        results['RA_Total_Time'] = self.ra_total_time
-
-        # Write dictionary as JSON object to file
-        os.chdir('results')
-        json_object = json.dumps(results, sort_keys=True, indent=4)
-        with open('%s.json' % self.name, 'w+') as f:
-            f.write(json_object)
+        self.results = {}
+        self.results['Name'] = self.name
+        self.results['GA_Attempts'] = self.ga_attempts
+        self.results['RA_Attempts'] = self.ra_attempts
+        self.results['GA_Total_Time'] = self.ga_total_time
+        self.results['RA_Total_Time'] = self.ra_total_time
         return
 
 
 
 if __name__ == '__main__':
 
+    trials = []
+
+    # Run trials
     for i in range(10):
         x = GATest(name=str(i))
         x.run_test()
+        trials.append(x)
+
+    # Store data
+    if not os.path.exists('results'):
+        os.makedirs('results')
+    os.chdir('results')
+    for trial in trials:
+        json_object = json.dumps(trial.results, sort_keys=True, indent=4)
+        with open('%s.json' % trial.name, 'w+') as f:
+            f.write(json_object)
