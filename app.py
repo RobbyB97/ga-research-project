@@ -36,19 +36,24 @@ def run_trials(trial_num=10):
     trials = []
 
     # Run trials
-    for i in range(11,13):
+    for i in range(trial_num):
         x = GATest(name=str(i))
         x.run_test()
         trials.append(x)
+    return trials
+
+
+def store_results(results):
 
     # Store data
     if not os.path.exists('results'):
         os.makedirs('results')
     os.chdir('results')
-    for trial in trials:
-        json_object = json.dumps(trial.results, sort_keys=True, indent=4)
-        with open('%s.json' % trial.name, 'w+') as f:
+    for result in results:
+        json_object = json.dumps(result.results, sort_keys=True, indent=4)
+        with open('%s.json' % result.name, 'w+') as f:
             f.write(json_object)
+    return
 
 
 if __name__ == '__main__':
