@@ -35,11 +35,19 @@ class GATest:
 
     def __init__(self, name='results'):
 
+        # Attributes and flags
         self.name = name    # Name file to store results in
         self.ga_complete = False
         self.ra_complete = False
         self.ga_attempts = 0
         self.ra_attempts = 0
+
+        # Set directory to file
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+        # Ensure results directory exists
+        if not os.path.exists('results'):
+            os.makedirs('results')
         return
 
 
@@ -218,18 +226,25 @@ class GATest:
 
     def store_results(self):
 
+        # Create dictionary with test data
         results = {}
-
+        results['Name'] = self.name
         results['GA_Attempts'] = self.ga_attempts
         results['RA_Attempts'] = self.ra_attempts
         results['GA_Total_Time'] = self.ga_total_time
         results['RA_Total_Time'] = self.ra_total_time
-        print(results)
+
+        # Write dictionary as JSON object to file
+        os.chdir('results')
+        json_object = json.dumps(results, sort_keys=True, indent=4)
+        with open('%s.json' % self.name, 'w+') as f:
+            f.write(json_object)
         return
 
 
 
 if __name__ == '__main__':
 
-    trial_one = GATest(name='trial_one')
-    trial_one.run_test()
+    for i in range(10):
+        x = GATest(name=str(i))
+        x.run_test()
