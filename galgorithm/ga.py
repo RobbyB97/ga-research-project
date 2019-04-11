@@ -32,7 +32,6 @@ class GA:
         return int(round(time.time() * 1000))
 
 
-
     def try_chromosome(self):
 
         for gene in self.chromosome:
