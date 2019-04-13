@@ -53,9 +53,54 @@ def store_results(results):
         json_object = json.dumps(result.results, sort_keys=True, indent=4)
         with open('%s.json' % result.name, 'w+') as f:
             f.write(json_object)
+
+    # Return to root directory
+    os.chdir(os.path.dirname(os.path.realpath(__file__)))
     return
 
 
+def json_to_csv(name='results'):
+
+    # Create CSV file and write header
+    os.chdir('results')
+    with open('%s.csv' % name, 'w') as f:
+        f.write('RA Attempts,GA Attempts,RA Average,GA Average,Num. of trials\n')
+
+    # Dictionary to store data for averages
+    averages = {}
+    averages['GA'] = 0
+    averages['RA'] = 0
+    averages['Trials'] = 0
+
+    # Get all json objects
+    json_objects = []
+    for file in os.listdir(os.getcwd()):
+        if '.json' in file:
+            with open(file, 'r') as f:
+                 json_object = json.loads(f.read())
+            json_objects.append(json_object)
+
+    # Calculate averages
+    for object in json_objects:
+        averages['GA'] += object['GA_Attempts']
+        averages['RA'] += object['RA_Attempts']
+        averages['Trials'] += 1
+    averages['GA'] /= averages['Trials']
+    averages['GA'] = int(averages['GA'])
+    averages['RA'] /= averages['Trials']
+    averages['RA'] = int(averages['RA'])
+
+
+    # Add data to csv
+    with open('%s.csv' % name, 'a') as f:
+        set_averages = False
+        for object in json_objects:
+            if set_averages:
+                f.write('%s,%s\n' % (object['RA_Attempts'], object['GA_Attempts']))
+            else:
+                f.write('%s,%s,%s,%s,%s\n' % (object['RA_Attempts'], object['GA_Attempts'], averages['RA'], averages['GA'], averages['Trials']))
+                set_averages = True
+    return
+
 if __name__ == '__main__':
-    data = run_trials(100)
-    store_results(data)
+    json_to_csv()
