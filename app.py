@@ -64,7 +64,7 @@ def json_to_csv(name='results'):
     # Create CSV file and write header
     os.chdir('results')
     with open('%s.csv' % name, 'w') as f:
-        f.write('RA Attempts,GA Attempts,RA Average,GA Average,Num. of trials\n')
+        f.write('Trial,RA Attempts,GA Attempts,RA Average,GA Average,Num. of trials\n')
 
     # Dictionary to store data for averages
     averages = {}
@@ -94,12 +94,14 @@ def json_to_csv(name='results'):
     # Add data to csv
     with open('%s.csv' % name, 'a') as f:
         set_averages = False
+        trial_number = 1
         for object in json_objects:
             if set_averages:
-                f.write('%s,%s\n' % (object['RA_Attempts'], object['GA_Attempts']))
+                f.write('%s,%s,%s\n' % (trial_number, object['RA_Attempts'], object['GA_Attempts']))
             else:
-                f.write('%s,%s,%s,%s,%s\n' % (object['RA_Attempts'], object['GA_Attempts'], averages['RA'], averages['GA'], averages['Trials']))
+                f.write('%s,%s,%s,%s,%s,%s\n' % (trial_number, object['RA_Attempts'], object['GA_Attempts'], averages['RA'], averages['GA'], averages['Trials']))
                 set_averages = True
+            trial_number += 1
     return
 
 if __name__ == '__main__':
