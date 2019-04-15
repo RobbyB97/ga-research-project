@@ -212,6 +212,4 @@ class GATest:
         self.results['Name'] = self.name
         self.results['GA_Attempts'] = self.ga_attempts
         self.results['RA_Attempts'] = self.ra_attempts
-        self.results['GA_Total_Time'] = self.ga_total_time
-        self.results['RA_Total_Time'] = self.ra_total_time
         return
