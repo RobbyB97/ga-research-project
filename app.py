@@ -9,6 +9,13 @@ import os
 import json
 import time
 from random import randint
+import csv
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy import stats
 
 from chessenv.board import Board
 from galgorithm.ga import GA
@@ -31,31 +38,26 @@ log.info('Running file ~/main/app.py:')
 
 
 
-def run_trials(trial_num=10):
+def run_trials(trial_num=100, name='results'):
 
-    trials = []
+    # Create CSV file and write header
+    os.chdir('results')
+    with open('%s.csv' % name, 'w') as f:
+        f.write('Trial,RA Attempts,GA Attempts,Num. of trials\n')
 
-    # Run trials
+    # Run trial and get results
+    first_trial = True
     for i in range(trial_num):
         x = GATest(name=str(i))
         x.run_test()
-        trials.append(x)
-    return trials
 
-
-def store_results(results):
-
-    # Store data
-    if not os.path.exists('results'):
-        os.makedirs('results')
-    os.chdir('results')
-    for result in results:
-        json_object = json.dumps(result.results, sort_keys=True, indent=4)
-        with open('%s.json' % result.name, 'w+') as f:
-            f.write(json_object)
-
-    # Return to root directory
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+        # Append results to file
+        with open('%s.csv' % name, 'a') as f:
+            if first_trial:
+                f.write('%s,%s,%s,%s\n' % (x.results['Name'], x.results['GA_Attempts'], x.results['RA_Attempts'], trial_num))
+                first_trial = False
+            else:
+                f.write('%s,%s,%s\n' % (x.results['Name'], x.results['GA_Attempts'], x.results['RA_Attempts']))
     return
 
 
@@ -104,5 +106,49 @@ def json_to_csv(name='results'):
             trial_number += 1
     return
 
+
+def get_ra_csv():
+
+    # Import data
+    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+    os.chdir('trials')
+    with open('results.csv', 'r') as f:
+        reader = csv.reader(f)
+        mydict= {rows[0]:rows[1] for rows in reader}
+
+    # Write to file
+    with open('random_agent.csv', 'w') as f:
+        for element in mydict:
+            try:
+                x = int(element)
+                f.write('%s,%s\n' % (element, mydict[element]))
+            except:
+                log.debug('Incompatible row')
+
+    # Return to main directory
+    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+    return
+
+
+def get_trial_one_csv():
+
+    # Import data
+    with open('results.csv', 'r') as f:
+        reader = csv.reader(f)
+        mydict= {rows[0]:rows[2] for rows in reader}
+
+    # Write to file
+    with open('ga_trial_one.csv', 'w') as f:
+        for element in mydict:
+            try:
+                x = int(element)
+                f.write('%s,%s\n' % (element, mydict[element]))
+            except:
+                log.debug('Incompatible row')
+
+    # Return to main directory
+    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+    return
+
+
 if __name__ == '__main__':
-    json_to_csv()
