@@ -66,7 +66,7 @@ class GATest:
                     self.ga_end_time = self.current_time()
                     log.info('GA Solution found after %s attempts' % str(self.ga_attempts))
                     self.ga_complete = True
-                    return
+                    return False
                 else:
                     chromosome_list.append(x)
 
@@ -88,8 +88,8 @@ class GATest:
                 else:
                     chromosome_list.append(x)
 
-        # Get fittest chromosomes
-        return self.fitness_function(batch=chromosome_list)
+        # Return chromosome batch
+        return chromosome_list
 
 
     def splice(self, chromosomes):
@@ -147,7 +147,9 @@ class GATest:
 
             spliced_chromosomes.append(spliced_one)
             spliced_chromosomes.append(spliced_two)
-        return self.run_ga_test(chromosomes=spliced_chromosomes)
+
+        # Return spliced chromosomes
+        return spliced_chromosomes
 
 
     def fitness_function(self, batch, divisor=5):
@@ -156,7 +158,7 @@ class GATest:
 
         # Give up on batch if it's too small
         if len(batch) <= 10:
-            return
+            return False
 
         else:
 
@@ -180,7 +182,9 @@ class GATest:
                     for num in gene:
                         chrom.append(num)
                 fittest.append(chrom)
-            return self.splice(chromosomes=fittest)
+
+            # Return fittest chromosomes
+            return fittest
 
 
     def store_results(self):
