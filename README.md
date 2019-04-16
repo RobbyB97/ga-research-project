@@ -16,3 +16,5 @@ ___
   5. Get the best 20%
   6. Splice them randomly
   5. Execute 4 spliced chromosomes
+* #### Notes
+  1. The mean average number of attempts for the GA to find a goal state (75848) was less than half than the RA control (182556)
