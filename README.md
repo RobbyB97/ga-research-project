@@ -7,13 +7,12 @@ ___
 The genetic algorithm employs GA techniques to be as fast as possible at finding a solution. It is different for every trial.
 ___
 ### Trial 1
-(10,000 GA and RA solutions)
-#### Genetic Algorithm
-Algorithm for each GA cycle:
-1. Create and execute 100 random chromosomes
-2. Get the best 20% (determined by number of conflicts)
-3. Splice them randomly
-4. Execute 20 spliced chromosomes
-5. Get the best 20%
-6. Splice them randomly
-5. Execute 4 spliced chromosomes
+* (10,000 GA and RA solutions)
+* #### Genetic Algorithm
+  1. Create and execute 100 random chromosomes
+  2. Get the best 20% (determined by number of conflicts)
+  3. Splice them randomly
+  4. Execute 20 spliced chromosomes
+  5. Get the best 20%
+  6. Splice them randomly
+  5. Execute 4 spliced chromosomes
