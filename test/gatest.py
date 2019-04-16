@@ -26,9 +26,7 @@ class GATest:
         # Attributes and flags
         self.name = name    # Name file to store results in
         self.ga_complete = False
-        self.ra_complete = False
         self.ga_attempts = 0
-        self.ra_attempts = 0
         return
 
 
@@ -43,11 +41,6 @@ class GATest:
         while not self.ga_complete:
             self.run_ga_test()
         self.ga_total_time = self.ga_end_time - self.ga_start_time
-
-        self.ra_start_time = self.current_time()
-        while not self.ra_complete:
-            self.run_ra_test()
-        self.ra_total_time = self.ra_end_time - self.ra_start_time
 
         # Return results
         self.store_results()
@@ -157,21 +150,6 @@ class GATest:
         return self.run_ga_test(chromosomes=spliced_chromosomes)
 
 
-    def run_ra_test(self, size=8):
-
-        # Run instance of random agent
-        self.ra_attempts += 1
-        x = RA()
-        x.run()
-
-        # Check if goal state found
-        if x.complete:
-            self.ra_end_time = self.current_time()
-            log.info('RA Solution found after %s attempts' % str(self.ra_attempts))
-            self.ra_complete = True
-        return
-
-
     def fitness_function(self, batch, divisor=5):
 
         fittest = []        # List of fittest chromosomes
@@ -211,5 +189,4 @@ class GATest:
         self.results = {}
         self.results['Name'] = self.name
         self.results['GA_Attempts'] = self.ga_attempts
-        self.results['RA_Attempts'] = self.ra_attempts
         return
