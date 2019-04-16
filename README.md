@@ -7,14 +7,16 @@ The random agent is the control, for which every GA solution is compared to. A q
 The genetic algorithm employs GA techniques to be as fast as possible at finding a solution. It is different for every trial.
 ___
 ### Trial 1
-* (10,000 GA and RA solutions)
-* #### Genetic Algorithm
-  1. Create and execute 100 random chromosomes
-  2. Get the best 20% (determined by number of conflicts)
-  3. Splice them randomly
-  4. Execute 20 spliced chromosomes
-  5. Get the best 20%
-  6. Splice them randomly
-  5. Execute 4 spliced chromosomes
-* #### Notes
-  1. The mean average number of attempts for the GA to find a goal state (75848) was less than half than the RA control (182556).
+(10,000 GA and RA solutions)
+#### Genetic Algorithm
+1. Create and execute 100 random chromosomes
+2. Get the best 20% (determined by number of conflicts)
+3. Splice them randomly
+4. Execute 20 spliced chromosomes
+5. Get the best 20%
+6. Splice them randomly
+5. Execute 4 spliced chromosomes
+#### Notes
+1. The mean average number of attempts for the GA to find a goal state (75848) was less than half than the RA control (182556).
+2. Although this is not recorded, from all of the executions that I watched most of the GA solutions seemed to be 2nd or 3rd generation (randomly spliced, not randomly generated).
+3. The effectiveness of the fitness function seems apparent from trial one, both from the mean average of the data and the frequency of spliced chromosomes finding goal states.
