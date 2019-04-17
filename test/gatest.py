@@ -43,11 +43,23 @@ class GATest:
 
             # First generation chromosomes
             first_gen = self.run_ga_test()
+            if not first_gen:
+                break
             first_fittest = self.fitness_function(batch=first_gen)
 
-            # Splice and execute fittest 4 times
+            # Splice and execute fittest 4 times (Second generation chromosomes)
             for i in range(4):
                 test_chroms = self.splice(first_fittest)
+                gen2 = self.run_ga_test(chromosomes=test_chroms)
+
+            if not gen2:
+                break
+            else:
+                second_fittest = self.fitness_function(batch=gen2)
+
+            # Splice and execute fittest twice (Third generation chromosomes)
+            for i in range(2):
+                test_chroms = self.splice(second_fittest)
                 self.run_ga_test(chromosomes=test_chroms)
 
         # Return results
@@ -167,7 +179,7 @@ class GATest:
         fittest = []        # List of fittest chromosomes
 
         # Give up on batch if it's too small
-        if len(batch) <= 10:
+        if len(batch) <= 2:
             return False
 
         else:
@@ -202,5 +214,5 @@ class GATest:
         # Create dictionary with test data
         self.results = {}
         self.results['Name'] = self.name
-        self.results['GA_Attempts'] = self.ga_attempts
+        self.results['GA_Attempts'] = self.final_ga_attempts
         return
