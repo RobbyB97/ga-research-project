@@ -29,7 +29,7 @@ ___
 2. Get the best 20% (determined by number of conflicts)
 3. Splice them randomly
 4. Execute 20 spliced chromosomes
-5. Repeat steps 2 through 4 five times
+5. Repeat steps 2 through 4 four times
 6. Get the best 20%
 7. Splice them randomly
 8. Execute 4 spliced chromosomes
