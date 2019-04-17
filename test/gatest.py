@@ -27,6 +27,7 @@ class GATest:
         self.name = name    # Name file to store results in
         self.ga_complete = False
         self.ga_attempts = 0
+        self.final_ga_attempts = None
         return
 
 
@@ -36,11 +37,18 @@ class GATest:
 
     def run_test(self):
 
-        # Run tests
+        # Run GA
         self.ga_start_time = self.current_time()
         while not self.ga_complete:
-            self.run_ga_test()
-        self.ga_total_time = self.ga_end_time - self.ga_start_time
+
+            # First generation chromosomes
+            first_gen = self.run_ga_test()
+            first_fittest = self.fitness_function(batch=first_gen)
+
+            # Splice and execute fittest 4 times
+            for i in range(4):
+                test_chroms = self.splice(first_fittest)
+                self.run_ga_test(chromosomes=test_chroms)
 
         # Return results
         self.store_results()
@@ -65,6 +73,7 @@ class GATest:
                 if x.complete:
                     self.ga_end_time = self.current_time()
                     log.info('GA Solution found after %s attempts' % str(self.ga_attempts))
+                    self.final_ga_attempts = self.ga_attempts
                     self.ga_complete = True
                     return False
                 else:
@@ -188,6 +197,8 @@ class GATest:
 
 
     def store_results(self):
+
+        self.final_ga_attempts = self.ga_attempts
 
         # Create dictionary with test data
         self.results = {}

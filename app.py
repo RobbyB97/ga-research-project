@@ -152,3 +152,8 @@ def get_trial_one_csv():
 
 
 if __name__ == '__main__':
+    x = GATest()
+    x.run_test()
+    while not x.ga_complete:
+        time.sleep(1)
+    print(x.final_ga_attempts)
