@@ -92,6 +92,7 @@ class GATest:
                 if x.complete:
                     self.ga_end_time = x.end_time
                     log.info('GA Solution found after %s attempts' % str(self.ga_attempts))
+                    self.final_ga_attempts = self.ga_attempts
                     self.ga_complete = True
                     return
                 else:
@@ -197,8 +198,6 @@ class GATest:
 
 
     def store_results(self):
-
-        self.final_ga_attempts = self.ga_attempts
 
         # Create dictionary with test data
         self.results = {}
