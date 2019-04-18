@@ -43,7 +43,7 @@ def run_trials(trial_num=100, name='results'):
     # Create CSV file and write header
     os.chdir('results')
     with open('%s.csv' % name, 'w') as f:
-        f.write('Trial,RA Attempts,GA Attempts,Num. of trials\n')
+        f.write('Trial,Attempts\n')
 
     # Run trial and get results
     first_trial = True
@@ -53,11 +53,7 @@ def run_trials(trial_num=100, name='results'):
 
         # Append results to file
         with open('%s.csv' % name, 'a') as f:
-            if first_trial:
-                f.write('%s,%s,%s,%s\n' % (x.results['Name'], x.results['GA_Attempts'], x.results['RA_Attempts'], trial_num))
-                first_trial = False
-            else:
-                f.write('%s,%s,%s\n' % (x.results['Name'], x.results['GA_Attempts'], x.results['RA_Attempts']))
+            f.write('%s,%s\n' % (x.results['Name'], x.results['GA_Attempts']))
     return
 
 
@@ -152,8 +148,4 @@ def get_trial_one_csv():
 
 
 if __name__ == '__main__':
-    x = GATest()
-    x.run_test()
-    while not x.ga_complete:
-        time.sleep(1)
-    print(x.final_ga_attempts)
+    run_trials(trial_num=10000, name='trial_2_results')
