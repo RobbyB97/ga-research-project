@@ -11,12 +11,6 @@ import time
 from random import randint
 import csv
 
-import numpy as np
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from scipy import stats
-
 from chessenv.board import Board
 from galgorithm.ga import GA
 from ra.ra import RA
