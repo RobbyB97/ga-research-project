@@ -36,15 +36,33 @@ class GAPlotter:
         # Read file into data dictionary
         os.chdir(self.datapath)
         self.data[filename] = pd.read_csv('%s.csv' % filename)
-
-        # Plot graph
-        if column:
-            self.plots.append(pd.DataFrame.hist(data=self.data[filename], column=column))
-        else:
-            self.plots.append(pd.DataFrame.hist(data=self.data[filename]))
         return
 
 
+    def plot_file(self, filename, column=None):
+
+        # Plot graph
+        if column:
+            x = pd.DataFrame.hist(data=self.data[filename], column=column)
+        else:
+            x = pd.DataFrame.hist(data=self.data[filename])
+
+        self.plots.append(x)
+        return
+
+
+    def get_mean(self, filename, column):
+
+        divisor = len(self.data[filename][column])
+        total = 0
+        for element in self.data[filename][column]:
+            total += element
+
+        avg = total/divisor
+        return avg
+
+
     def show_data(self):
+        plt.figure()
         plt.show()
         return
