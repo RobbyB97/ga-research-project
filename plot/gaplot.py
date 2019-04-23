@@ -42,6 +42,9 @@ class GAPlotter:
         return
 
 
+    def show_data(self):
+        plt.show()
+        return
 """
 os.chdir('trials')
 sns.set(color_codes=True)
