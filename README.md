@@ -13,6 +13,8 @@ ___
 2. Repeat step 1 for each row of the board
 3. Check to see if any queen can capture another queen
 4. Repeat steps 1-3 until a goal state is achieved
+#### Results
+* Mean average of attempts to find goal state: 182556
 ___
 ### Trial 1
 * (10,000 GA solutions)
@@ -24,8 +26,10 @@ ___
 5. Get the best 20%
 6. Splice them randomly
 7. Execute 4 spliced chromosomes
+#### Results
+* Mean average of attempts to find goal state: 75848
 #### Notes
-1. The mean average number of attempts for the GA to find a goal state (75848) was less than half than the RA control (182556).
+1. The mean average number of attempts for the control to find a goal state was 2.4 times higher than trial one.
 2. Although this is not recorded, from all of the executions that I watched most of the GA solutions seemed to be 2nd or 3rd generation (randomly spliced, not randomly generated).
 3. The effectiveness of the fitness function seems apparent from trial one, both from the mean average of the data and the frequency of spliced chromosomes finding goal states.
 ___
@@ -42,3 +46,6 @@ ___
 7. Splice them randomly
 8. Execute 4 spliced chromosomes
 9. Repeat steps 7-8 twice
+#### Results
+* Mean average of attempts to find goal state: 48936
+#### Notes
