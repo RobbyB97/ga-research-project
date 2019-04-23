@@ -15,6 +15,8 @@ from scipy import stats
 
 log = logging.getLogger('GA_Project')
 
+
+
 class GAPlotter:
 
 
