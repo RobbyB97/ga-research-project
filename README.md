@@ -6,8 +6,16 @@ The random agent is the control, for which every GA solution is compared to. A q
 #### Genetic Algorithm:
 The genetic algorithm employs GA techniques to be as fast as possible at finding a solution. It is different for every trial.
 ___
+### Control
+* (10,000 RA solutions)
+#### Random Agent Algorithm
+1. Randomly generate column to place queen in row
+2. Repeat step 1 for each row of the board
+3. Check to see if any queen can capture another queen
+4. Repeat steps 1-3 until a goal state is achieved
+___
 ### Trial 1
-* (10,000 GA and RA solutions)
+* (10,000 GA solutions)
 #### Genetic Algorithm
 1. Create and execute 100 random chromosomes
 2. Get the best 20% (determined by number of conflicts)
