@@ -45,12 +45,3 @@ class GAPlotter:
     def show_data(self):
         plt.show()
         return
-"""
-os.chdir('trials')
-sns.set(color_codes=True)
-os.chdir('trials')
-ran = pd.read_csv('random_agent.csv')
-print(ran.keys())
-y = pd.DataFrame.hist(data=ran, column='Attempts')
-plt.show()
-"""
