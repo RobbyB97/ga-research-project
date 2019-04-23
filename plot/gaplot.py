@@ -5,6 +5,7 @@
     gathered by the GA tests
 """
 
+import os
 import logging
 
 import numpy as np
