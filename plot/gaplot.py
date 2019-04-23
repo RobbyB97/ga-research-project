@@ -19,14 +19,26 @@ class GAPlotter:
 
 
     def __init__(self, datapath):
+
+        # Configure packages and variables
         self.datapath = datapath
+        self.data = {}  # Dictionary for storing data
+        self.plots = []     # List of plotted graphs
         sns.set(color_codes=True)
         return
 
 
-    def load_file(self, filename):
-        os.chdir(self.datapath)
+    def load_file(self, filename, column=None):
 
+        # Read file into data dictionary
+        os.chdir(self.datapath)
+        self.data[filename] = pd.read_csv('%s.csv' % filename)
+
+        # Plot graph
+        if column:
+            self.plots.append(pd.DataFrame.hist(data=self.data[filename], column=column))
+        else:
+            self.plots.append(pd.DataFrame.hist(data=self.data[filename]))
         return
 
 
