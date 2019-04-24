@@ -43,9 +43,9 @@ class GAPlotter:
 
         # Plot graph
         if column:
-            x = pd.DataFrame.hist(data=self.data[filename], column=column)
+            x = pd.DataFrame.hist(data=self.data[filename], column=column, bins=20)
         else:
-            x = pd.DataFrame.hist(data=self.data[filename])
+            x = pd.DataFrame.hist(data=self.data[filename], bins=20)
 
         self.plots.append(x)
         return
