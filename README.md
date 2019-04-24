@@ -19,7 +19,7 @@ ___
 ### Trial 1
 * (10,000 GA solutions)
 
-<img src="./screenshots/ga_trial_one.png" alt='Histogram'/>
+<img src="./screenshots/ga_trial_one.png" alt='Histogram'></img>
 
 #### Genetic Algorithm
 1. Create and execute 100 random chromosomes
