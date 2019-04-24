@@ -16,6 +16,7 @@ ___
 #### Results
 * Mean average of attempts to find goal state: 182556
 * Histogram:
+
 ![Histogram](./screenshots/random_agent.png)
 ___
 ### Trial 1
@@ -31,6 +32,7 @@ ___
 #### Results
 * Mean average of attempts to find goal state: 75848
 * Histogram:
+
 ![Histogram](./screenshots/ga_trial_one.png)
 #### Notes
 1. The mean average number of attempts for the control to find a goal state was 2.4 times higher than trial one.
@@ -53,5 +55,6 @@ ___
 #### Results
 * Mean average of attempts to find goal state: 48936
 * Histogram:
+
 ![Histogram](./screenshots/ga_trial_two.png)
 #### Notes
