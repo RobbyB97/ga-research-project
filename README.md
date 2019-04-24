@@ -31,6 +31,7 @@ ___
 7. Execute 4 spliced chromosomes
 #### Results
 * Mean average of attempts to find goal state: 75848
+* ~2.4x faster than the random agent
 * Histogram:
 
 ![Histogram](./screenshots/ga_trial_one.png)
@@ -54,6 +55,7 @@ ___
 9. Repeat steps 7-8 twice
 #### Results
 * Mean average of attempts to find goal state: 48936
+* ~3.7x faster than the random agent
 * Histogram:
 
 ![Histogram](./screenshots/ga_trial_two.png)
