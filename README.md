@@ -15,12 +15,11 @@ ___
 4. Repeat steps 1-3 until a goal state is achieved
 #### Results
 * Mean average of attempts to find goal state: 182556
+* Histogram:
+![Histogram](./screenshots/random_agent.png)
 ___
 ### Trial 1
 * (10,000 GA solutions)
-
-![Histogram](./screenshots/ga_trial_one.png)
-
 #### Genetic Algorithm
 1. Create and execute 100 random chromosomes
 2. Get the best 20% (determined by number of conflicts)
@@ -31,6 +30,8 @@ ___
 7. Execute 4 spliced chromosomes
 #### Results
 * Mean average of attempts to find goal state: 75848
+* Histogram:
+![Histogram](./screenshots/ga_trial_one.png)
 #### Notes
 1. The mean average number of attempts for the control to find a goal state was 2.4 times higher than trial one.
 2. Although this is not recorded, from all of the executions that I watched most of the GA solutions seemed to be 2nd or 3rd generation (randomly spliced, not randomly generated).
@@ -51,4 +52,6 @@ ___
 9. Repeat steps 7-8 twice
 #### Results
 * Mean average of attempts to find goal state: 48936
+* Histogram:
+![Histogram](./screenshots/ga_trial_two.png)
 #### Notes
