@@ -18,6 +18,7 @@ ___
 ___
 ### Trial 1
 * (10,000 GA solutions)
+<img src="./screenshots/ga_trial_one.png" width=100% height=auto alt='Histogram'>
 #### Genetic Algorithm
 1. Create and execute 100 random chromosomes
 2. Get the best 20% (determined by number of conflicts)
