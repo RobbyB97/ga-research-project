@@ -2,6 +2,7 @@
     Author: Robby Bergers
 
     This is the main file for testing Genetic Algorithms.
+
 """
 
 import logging
@@ -15,6 +16,7 @@ from chessenv.board import Board
 from galgorithm.ga import GA
 from ra.ra import RA
 from test.gatest import GATest
+from plot.gaplot import GAPlotter
 
 # Set logger
 log = logging.getLogger('GA_Project')
@@ -142,4 +144,12 @@ def get_trial_one_csv():
 
 
 if __name__ == '__main__':
-    run_trials(trial_num=10000, name='trial_2_results')
+    path = os.path.dirname(os.path.realpath(__file__)) + '/trials'
+    x = GAPlotter(datapath=path)
+    x.load_file(filename='random_agent')
+    x.load_file(filename='ga_trial_one')
+    x.load_file(filename='ga_trial_two')
+    x.plot_file(filename='random_agent', column='Attempts')
+    x.plot_file(filename='ga_trial_one', column='Attempts')
+    x.plot_file(filename='ga_trial_two', column='Attempts')
+    x.show_data()
