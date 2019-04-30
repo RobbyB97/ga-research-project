@@ -7,6 +7,8 @@ The random agent is the control, for which every GA solution is compared to. A q
 #### Genetic Algorithm:
 The genetic algorithm employs GA techniques to be as fast as possible at finding a solution. It is different for every trial.
 ___
+### Trials
+___
 ### Control
 * (10,000 RA solutions)
 #### Random Agent Algorithm
@@ -64,6 +66,7 @@ ___
 
 ___
 ### Sources/ Survey
+___
 * [Genetic Algorithms and Machine Learning](https://link.springer.com/content/pdf/10.1023%2FA%3A1022602019183.pdf)
 #### Notes
 1. Common argument against genetic algorithms is that humans took billions of years to evolve, and that somehow means that genetic algorithms take billions of years to find solutions?
@@ -83,3 +86,6 @@ solve problems even when no person can fully understand their structure."
     * Genetic algorithms need only know what a goal is, and a way to measure how close they are to a goal. Using tactics employed by natural selection and using them more efficiently than natural selection, genetic algorithms discover how to solve a problem by themselves. This makes GAs  a very useful strategy when you have absolutely no idea how to find a solution and are therefore unable to tell a computer how to solve a problem.
 2. "...these so-called genetic algorithms have already demonstrated the ability to make breakthroughs in the design of such complex systems such as jet engines."
 3. Different types of genetic algorithms use chromosomes differently.
+___
+* [Handbook of Genetic Algorithms](https://pdf.sciencedirectassets.com/271585/1-s2.0-S0004370200X00409/1-s2.0-S0004370298000162/main.pdf?x-amz-security-token=AgoJb3JpZ2luX2VjEJH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDpzPbx4LEra4y6iA5UCzm%2BI0m4Fr3XOaec%2Bdq7cDl9cAIhAMaFRwHAv2ujEA6RZiAp%2BvGV2cFG5CcC3sVG79eNppLEKtoDCHkQAhoMMDU5MDAzNTQ2ODY1IgzvFdJnUwUixqpGc50qtwNJd1Pv1REKQtXoNrSCI474QjYP0dY4gRHmaESnnNdsQxBx0xYgc3uPz3EmH18Y3tMK11zC88uQEktwcg%2FYw6R5GVcJcknNcGI%2Bh1Ml7zfZwo9L7NZVWjGQ7DH4hHiMHbEmnamWDeV6XrcjcxD5F5Fg2vjjh0He1Qw5PPWlMYxNgBvGzmoG1rdfB032NcBCZuQUpTwZB1vHZJbeHnqFG9q5vxgLzYIA%2Fqfpte%2FLIUkDRIwVEhSjSb8OBFZZSYdP%2BI0tQjXfGOX18oTHXtE5ODEOV8QtvANsKS%2BK%2FQI2hYEPQTMwD7G7gM1AN8mHLse1bLgMlJJVlDvxjuPF1viNtTu22bX2PsYgKVOfaUlzB96Mhs1oY7y%2FLtLBaCb192nUURMBgEiDr%2B346nRFDQokiGHYYv%2FXIE7uopqj%2F%2BpQ5WQ3c3BNWcwldXCeWKjnOQz3VzCXYMdrtznkM75DjZ4H1P%2BkOHhiXSrpvnuTHFyomVV9i4kfUJmVMaodrzldYf4MOkP3vWwLSULk32JQuSIXLSI75dr53Vj6CoJU8qTPG71SOsfS%2B3%2BMmTisaXWcxalsk8ysZ473WBRxMNnroeYFOrMBLhjtL2qqa7wMmYiEDWYfu9psGCIQ6iamKCiEHgXsd5OgfoFtLNUYMhbTm45w0eE2AgcP%2FUuJRwe5jdOnmR5J0c8l9Sxk4idnGAeqm4hVnv24%2Bvbau8PAYnhUd%2F%2FpXib6KKawjpGmVt96hzTrOrwNwSZwMJrKwqBAxyFJhQdbhMMQuGs2nIAfwXRwYySRDf%2BGg8CiTqb3tMDCqHY19FdT3DBT5AVrmEOfwQupVG22WMGMSgQ%3D&AWSAccessKeyId=ASIAQ3PHCVTY77Q2SRHI&Expires=1556647044&Signature=85iou3lZ7FCNCVKpfvZ%2Faw1Mz2s%3D&hash=aa3283b7a51418824c8cd528f02b6b40487f77f5b19b597b6fdf3a0bfa71fde8&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0004370298000162&tid=spdf-8292c0e2-f061-4e90-bb5a-c5733e08e359&sid=6fd1a561227386480f8a7df0b43635c9fe6fgxrqa&type=client)
+#### Notes
