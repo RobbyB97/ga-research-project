@@ -67,19 +67,19 @@ ___
 * [Genetic Algorithms and Machine Learning](https://link.springer.com/content/pdf/10.1023%2FA%3A1022602019183.pdf)
 #### Notes
 1. Common argument against genetic algorithms is that humans took billions of years to evolve, and that somehow means that genetic algorithms take billions of years to find solutions?
-  * 1 Human generation = ~20 years
-  * 1 GA generation = < 1 second
-  * Selection process can be constrained pretty tightly in GAs, much tighter than in nature. Anything that has 1 successful copulation in nature can pass on its genes, GAs can be set to only push the best 20% or better forward. Insects with short life spans can adapt to new situations in a matter of days. This argument about adaptation taking a long time in nature, and therefore taking a long time artificially falls apart at the first ounce of thought.
-  * The best solutions in a GA can all 'breed' with each other, exploring every possible outcome of the best solutions.
+    * 1 Human generation = ~20 years
+    * 1 GA generation = < 1 second
+    * Selection process can be constrained pretty tightly in GAs, much tighter than in nature. Anything that has 1 successful copulation in nature can pass on its genes, GAs can be set to only push the best 20% or better forward. Insects with short life spans can adapt to new situations in a matter of days. This argument about adaptation taking a long time in nature, and therefore taking a long time artificially falls apart at the first ounce of thought.
+    * The best solutions in a GA can all 'breed' with each other, exploring every possible outcome of the best solutions.
 2. "Simply stated, genetic algorithms are probabilistic search procedures designed to work on large spaces involving states that can be represented by strings."
-  * GAs are not universally applicable.
-  * GAs can produce much better solutions much faster on certain types of problems than other machine learning algorithms.
+    * GAs are not universally applicable.
+    * GAs can produce much better solutions much faster on certain types of problems than other machine learning algorithms.
 3. "...the idea that the mind is subject to the same competitive-cooperative pressures as evolutionary systems has achieved some currency outside of GA circles."
 ___
 * [Genetic Algorithms](https://www.jstor.org/stable/pdf/24939139.pdf?refreqid=excelsior%3A7b79ef68affedd67375ee74ef85c5ed3)
 #### Notes
 1. "By harnessing the of the genes of a single parent, researchers may be able to 'breed' programs that
 solve problems even when no person can fully understand their structure."
-  * Genetic algorithms need only know what a goal is, and a way to measure how close they are to a goal. Using tactics employed by natural selection and using them more efficiently than natural selection, genetic algorithms discover how to solve a problem by themselves. This makes GAs  a very useful strategy when you have absolutely no idea how to find a solution and are therefore unable to tell a computer how to solve a problem.
+    * Genetic algorithms need only know what a goal is, and a way to measure how close they are to a goal. Using tactics employed by natural selection and using them more efficiently than natural selection, genetic algorithms discover how to solve a problem by themselves. This makes GAs  a very useful strategy when you have absolutely no idea how to find a solution and are therefore unable to tell a computer how to solve a problem.
 2. "...these so-called genetic algorithms have already demonstrated the ability to make breakthroughs in the design of such complex systems such as jet engines."
 3. Different types of genetic algorithms use chromosomes differently.
