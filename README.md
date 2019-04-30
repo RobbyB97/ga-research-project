@@ -81,3 +81,5 @@ ___
 1. "By harnessing the of the genes of a single parent, researchers may be able to 'breed' programs that
 solve problems even when no person can fully understand their structure."
   * Genetic algorithms need only know what a goal is, and a way to measure how close they are to a goal. Using tactics employed by natural selection and using them more efficiently than natural selection, genetic algorithms discover how to solve a problem by themselves. This makes GAs  a very useful strategy when you have absolutely no idea how to find a solution and are therefore unable to tell a computer how to solve a problem.
+2. "...these so-called genetic algorithms have already demonstrated the ability to make breakthroughs in the design of such complex systems such as jet engines."
+3. Different types of genetic algorithms use chromosomes differently.
