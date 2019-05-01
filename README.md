@@ -93,3 +93,5 @@ ___
 2. The term 'genetic algorithm' can be misleading in the sense that there isn't necessarily a strong link between any given genetic algorithm and the natural behavior of genes in nature.
     * Selection in genetic algorithms can be much tighter than in nature, mutation and splicing can be done more intelligently in genetic algorithms than in nature.
     * There are many different methods of crossing over in genetic algorithms.
+3. Genetic algorithms can be implemented with other machine learning strategies as well.
+    * Crossing over can be used on Artificial Neural Networks
