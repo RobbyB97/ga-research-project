@@ -102,7 +102,9 @@ ___
 ___
 * [Genetic algorithms: An Overview](https://onlinelibrary.wiley.com/doi/epdf/10.1002/cplx.6130010108)
 #### Notes
-
+1. GAs are a form of 'evolutionary computation'
+2. GA concept began with John Holland in the 1960s
+3. AI is developed using a 'bottom-up paradigm.' "In such a paradigm, human programmers encode simple rules, and complex behaviors such as intelligence emerge from these simple rules."
 ___
 * [Systems Research, Genetic Algorithms and Information Systems](https://search.proquest.com/docview/196893337?accountid=27112)
 #### Notes
