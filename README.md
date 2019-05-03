@@ -1,13 +1,13 @@
-## Genetic Algorithm vs. Random Agent
+# Genetic Algorithm vs. Random Agent
 This research project sets out to prove that Genetic Algorithms can be implemented to generate solutions efficiently. The toy problem being used for this project is the 8 Queens problem, where 8 queens must be placed on a chess board such that no queen is capable of capturing any other queen. The performance of the genetic algorithm (GA) is compared to the performance of a random agent. If the 8 Queens problem can be solved by the GA faster than the random agent on average, then the GA is efficient.
 ___
-#### Random agent:
+### Random agent:
 The random agent is the control, for which every GA solution is compared to. A queen is placed randomly on each row of the board. It keeps running until it finds a goal state.
 
-#### Genetic Algorithm:
+### Genetic Algorithm:
 The genetic algorithm employs GA techniques to be as fast as possible at finding a solution. It is different for every trial.
 ___
-### Trials
+## Trials
 ___
 ### Control
 * (10,000 RA solutions)
@@ -108,6 +108,14 @@ ___
 4. Goal of GAs is typically to minimize or maximize a certain function.
     * Let's say a robot is trying to finish a maze as quickly as possible. "The fitness of a particular sequence (chromosome) can be calculated by letting the robot follow the sequence, and then measuring the number of steps between its final position and the exit-the smaller the distance, the higher the fitness of the sequence."
 5. Since GAs rely heavily on randomness, they must be run many times to get an accurate estimate of their efficiency.
+6. GA Common uses:
+    * Optimization (scheduling, numerical optimization)
+    * Automatic programming
+    * Economic models
+    * Immune system models
+    * Ecological models
+    * Population genetics models (as in, under what conditions will a certain trait become evolutionarily viable)
+    * Relationship between evolution and learning
 ___
 * [Systems Research, Genetic Algorithms and Information Systems](https://search.proquest.com/docview/196893337?accountid=27112)
 #### Notes
