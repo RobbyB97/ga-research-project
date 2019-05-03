@@ -105,6 +105,9 @@ ___
 1. GAs are a form of 'evolutionary computation'
 2. GA concept began with John Holland in the 1960s
 3. AI is developed using a 'bottom-up paradigm.' "In such a paradigm, human programmers encode simple rules, and complex behaviors such as intelligence emerge from these simple rules."
+4. Goal of GAs is typically to minimize or maximize a certain function.
+    * Let's say a robot is trying to finish a maze as quickly as possible. "The fitness of a particular sequence (chromosome) can be calculated by letting the robot follow the sequence, and then measuring the number of steps between its final position and the exit-the smaller the distance, the higher the fitness of the sequence."
+5. Since GAs rely heavily on randomness, they must be run many times to get an accurate estimate of their efficiency.
 ___
 * [Systems Research, Genetic Algorithms and Information Systems](https://search.proquest.com/docview/196893337?accountid=27112)
 #### Notes
