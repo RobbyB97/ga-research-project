@@ -95,3 +95,16 @@ ___
     * There are many different methods of crossing over in genetic algorithms.
 3. Genetic algorithms can be implemented with other machine learning strategies as well.
     * Crossing over can be used on Artificial Neural Networks
+___
+* [A Summary of Research on Parallel Genetic Algorithms](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=1115E425DCC85D6A7942493DE5F3442A?doi=10.1.1.49.4669&rep=rep1&type=pdf)
+#### Notes
+
+___
+* [Genetic algorithms: An Overview](https://onlinelibrary.wiley.com/doi/epdf/10.1002/cplx.6130010108)
+#### Notes
+
+___
+* [Systems Research, Genetic Algorithms and Information Systems](https://search.proquest.com/docview/196893337?accountid=27112)
+#### Notes
+
+___
