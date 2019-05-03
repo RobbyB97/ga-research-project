@@ -123,5 +123,15 @@ ___
 ___
 * [A Study on Genetic Algorithm and its Applications](https://www.researchgate.net/publication/309770246_A_Study_on_Genetic_Algorithm_and_its_Applications)
 #### Notes
-
+1. 3 Main stages of a GA:
+    * Selection operation
+    * Crossover operation
+    * Mutation operation
+2. Selection operation:
+    * Chromosomes to be mutated or recombined can be randomly selected from the population with or without a bias towards the best chromosomes. The selection process does not need an element of randomness.
+    * One highly effective selection method is to always select the best chromosome from the population, but add an element of randomness to the rest of the selections.
+3. Crossover operation:
+    * Single-point crossover: Splits chromosomes in half at a random point, then recombines them with each other
+    * Two-point crossover: Split chromosomes into three pieces, crossing over the middle section between chromosomes
+    * Uniform crossover: Group chromosomes into pairs, randomly generate a string of 1s and 0s for each pair. Swap bits of the chromosomes at the locations of every 1 in the string. 
 ___
