@@ -121,3 +121,7 @@ ___
 #### Notes
 
 ___
+* [A Study on Genetic Algorithm and its Applications](https://www.researchgate.net/publication/309770246_A_Study_on_Genetic_Algorithm_and_its_Applications)
+#### Notes
+
+___
