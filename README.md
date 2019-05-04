@@ -133,5 +133,10 @@ ___
 3. Crossover operation:
     * Single-point crossover: Splits chromosomes in half at a random point, then recombines them with each other
     * Two-point crossover: Split chromosomes into three pieces, crossing over the middle section between chromosomes
-    * Uniform crossover: Group chromosomes into pairs, randomly generate a string of 1s and 0s for each pair. Swap bits of the chromosomes at the locations of every 1 in the string. 
+    * Uniform crossover: Group chromosomes into pairs, randomly generate a string of 1s and 0s for each pair. Swap bits of the chromosomes at the locations of every 1 in the string.
+4. Mutation operation:
+    * Set a probability for each gene in the chromosome to mutate
 ___
+* [Adapting Crossover and Mutation Rates in Genetic Algorithms](https://www.researchgate.net/profile/Wen-Yang_Lin/publication/220587952_Adapting_Crossover_and_Mutation_Rates_in_Genetic_Algorithms/links/09e41507ecb25e3e07000000/Adapting-Crossover-and-Mutation-Rates-in-Genetic-Algorithms.pdf)
+#### Notes
+1. "The mutation operator is used to change some elements in selected individuals with a probability p m (the mutation rate or mutation probability), leading to additional genetic diversity to help the search process escape from local optimal traps."
