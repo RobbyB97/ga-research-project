@@ -140,3 +140,8 @@ ___
 * [Adapting Crossover and Mutation Rates in Genetic Algorithms](https://www.researchgate.net/profile/Wen-Yang_Lin/publication/220587952_Adapting_Crossover_and_Mutation_Rates_in_Genetic_Algorithms/links/09e41507ecb25e3e07000000/Adapting-Crossover-and-Mutation-Rates-in-Genetic-Algorithms.pdf)
 #### Notes
 1. "The mutation operator is used to change some elements in selected individuals with a probability p m (the mutation rate or mutation probability), leading to additional genetic diversity to help the search process escape from local optimal traps."
+___
+* [Optimal Mutation Rates in Genetic Search](http://neuro.bstu.by/ai/To-dom/My_research/Papers-0/For-research/Needle/back.pdf)
+#### Notes
+
+___
