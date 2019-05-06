@@ -65,3 +65,4 @@ ___
 #### Notes
 
 ___
+###[Research and notes](https://github.com/RobbyB97/ga-research-project/blob/master/Research.md)
