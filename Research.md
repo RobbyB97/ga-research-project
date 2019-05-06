@@ -1,3 +1,9 @@
+## Research
+
+Sources, citations and notes.
+___
+
+
 ### Sources/ Survey
 ___
 * [Genetic Algorithms and Machine Learning](https://link.springer.com/content/pdf/10.1023%2FA%3A1022602019183.pdf)
