@@ -79,8 +79,20 @@ ___
 * [Adapting Crossover and Mutation Rates in Genetic Algorithms](https://www.researchgate.net/profile/Wen-Yang_Lin/publication/220587952_Adapting_Crossover_and_Mutation_Rates_in_Genetic_Algorithms/links/09e41507ecb25e3e07000000/Adapting-Crossover-and-Mutation-Rates-in-Genetic-Algorithms.pdf)
 #### Notes
 1. "The mutation operator is used to change some elements in selected individuals with a probability p m (the mutation rate or mutation probability), leading to additional genetic diversity to help the search process escape from local optimal traps."
+    * It's worth noting that adding a mutation probability to a genetic algorithm doesn't necessarily increase the efficiency. Only with objective functions in which there are local minimums/maximums are they typically helpful.
 ___
 * [Optimal Mutation Rates in Genetic Search](http://neuro.bstu.by/ai/To-dom/My_research/Papers-0/For-research/Needle/back.pdf)
 #### Notes
 
+___
+* [Evolutionary Computation: Comments on the History and Current State](https://www.researchgate.net/profile/Hans-Paul_Schwefel/publication/3418513_Evolutionary_Computation_Comments_on_the_History_and_Current_State/links/00463534e624d0358e000000/Evolutionary-Computation-Comments-on-the-History-and-Current-State.pdf)
+#### Notes
+1. Main types of evolutionary algorithms:
+    * Genetic Algorithms
+    * Evolutionary Programming
+    * Evolution Strategies
+2. Genetic Algorithms were 'originally proposed as a general model of adaptive processes, but by far the largest application of the techniques is in the domain of optimization.'
+3. Genetic Algorithms were originally introduced in the 1950s, but didn't gain traction until Holland's work in the 1970's. They were initially inefficient not only because of the limited computational power available at the time, but also because the approaches being taken lacked the refinement necessary to make any evolutionary computational algorithm to be viable.
+4. Another big issue evolutionary computational algorithms had to overcome before they could become viable was finding the types of problems they solve most efficiently.
+5.
 ___
