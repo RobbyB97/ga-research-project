@@ -1,5 +1,9 @@
 # Genetic Algorithm vs. Random Agent
+> This research project was for my Senior Research class in spring 2019.
+
 This research project sets out to prove that Genetic Algorithms can be implemented to generate solutions efficiently. The toy problem being used for this project is the 8 Queens problem, where 8 queens must be placed on a chess board such that no queen is capable of capturing any other queen. The performance of the genetic algorithm (GA) is compared to the performance of a random agent. If the 8 Queens problem can be solved by the GA faster than the random agent on average, then the GA is efficient.
+___
+The files for the second GA are in the master branch, the first GA in trial_two branch, and the random agent in first_trial branch. Below is a description of the experiment, the algorithms and their results compared to one another.
 ___
 ### Random agent:
 The random agent is the control, for which every GA solution is compared to. A queen is placed randomly on each row of the board. It keeps running until it finds a goal state.
@@ -65,4 +69,4 @@ ___
 #### Notes
 
 ___
-###[Research and notes](https://github.com/RobbyB97/ga-research-project/blob/master/Research.md)
+[Research and notes](https://github.com/RobbyB97/ga-research-project/blob/master/Research.md)
