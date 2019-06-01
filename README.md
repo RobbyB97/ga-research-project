@@ -66,7 +66,6 @@ ___
 * Histogram:
 
 ![Histogram](./screenshots/ga_trial_two.png)
-#### Notes
 
 ___
 [Research and notes](https://github.com/RobbyB97/ga-research-project/blob/master/Research.md)
